@@ -1,15 +1,13 @@
-import { FC, Suspense, useContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { AboutPage } from './pages/AboutPage/AboutPage.async';
-import { MainPage } from './pages/MainPage/MainPage.async';
-import { Link } from 'react-router-dom';
+import { FC, Suspense } from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import useTheme from 'shared/lib/useTheme';
+import { classNames } from 'shared/lib/classNames';
 import './styles/index.scss';
-import useTheme from './hooks/useTheme';
-import { classNames } from './helpers/classNames';
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
 
 const App: FC = () => {
   const [theme, setTheme] = useTheme();
-  console.log('theme: ', theme);
 
   return (
     <div className={classNames('app', [theme])}>
