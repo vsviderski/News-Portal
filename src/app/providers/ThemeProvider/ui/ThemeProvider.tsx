@@ -5,7 +5,7 @@ import {
   ThemeContext,
 } from '../lib/ThemeContext';
 
-const ThemeProvider: FC = ({ children }): JSX.Element => {
+export const ThemeProvider: FC = ({ children }): JSX.Element => {
   const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
@@ -15,5 +15,3 @@ const ThemeProvider: FC = ({ children }): JSX.Element => {
     <ThemeContext.Provider value={themeProps}>{children}</ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;

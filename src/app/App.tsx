@@ -1,25 +1,22 @@
-import { FC, Suspense } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import useTheme from 'shared/lib/useTheme';
 import { classNames } from 'shared/lib/classNames';
+import { Router } from './providers/Router';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 import './styles/index.scss';
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
 
-const App: FC = () => {
-  const [theme, setTheme] = useTheme();
+const App: FC = (): JSX.Element => {
+  const [theme] = useTheme();
 
   return (
     <div className={classNames('app', [theme])}>
-      <button onClick={setTheme}>Toggle theme</button>
-      <Link to="/">Main page</Link>
-      <Link to="/about">About page</Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <Navbar />
+      <div className='content-page'>
+        <Sidebar />
+        <Router />
+      </div>
     </div>
   );
 };

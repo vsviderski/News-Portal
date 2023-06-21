@@ -16,7 +16,8 @@ export const buildLoaders = (isDev: boolean): RuleSetRule[] => {
         loader: 'css-loader',
         options: {
           modules: {
-            auto: (resPath: string) => Boolean(resPath.endsWith('.module.scss')),
+            auto: (resPath: string) =>
+              Boolean(resPath.endsWith('.module.scss')),
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:5]'
               : '[hash:base64:8]',
@@ -27,5 +28,19 @@ export const buildLoaders = (isDev: boolean): RuleSetRule[] => {
     ],
   };
 
-  return [tsLoader, styleLoader];
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
+
+  return [tsLoader, styleLoader, svgLoader, fileLoader];
 };
