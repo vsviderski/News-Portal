@@ -9,25 +9,25 @@ interface ISidebarProps {
 }
 
 const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
-  const onToggle = (): void => {
-    setIsCollapsed(!isCollapsed);
-  }
+    const onToggle = (): void => {
+        setIsCollapsed(!isCollapsed);
+    };
 
-  return (
-    <div
-      className={classNames(cls.Sidebar, [className], {
-        [cls.collapsed]: isCollapsed,
-      })}
-    >
-      <button onClick={onToggle}>Toggle</button>
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={cls.langSwitcher} />
-      </div>
-    </div>
-  );
+    return (
+        <div
+            className={classNames(cls.Sidebar, [className], {
+                [cls.collapsed]: isCollapsed,
+            })}
+        >
+            <button onClick={onToggle}>Toggle</button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.langSwitcher} />
+            </div>
+        </div>
+    );
 };
 
 export default Sidebar;

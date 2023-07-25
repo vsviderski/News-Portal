@@ -7,13 +7,11 @@ interface INavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
-  return (
+export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => (
     <div className={classNames(cls.navbar, [className])}>
-      <div className={cls.links}>
-        <AppLink to="/" className={cls.mainLink}>Main page</AppLink>
-        <AppLink to="/about">About page</AppLink>
-      </div>
+        <div className={cls.links}>
+            <AppLink to="/" className={cls.mainLink}>Main page</AppLink>
+            <AppLink to="/about">About page</AppLink>
+        </div>
     </div>
-  );
-};
+);

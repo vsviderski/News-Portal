@@ -8,36 +8,34 @@ import './styles/index.scss';
 import { useTranslation } from 'react-i18next';
 
 const TestComp = () => {
-  const {i18n } = useTranslation();
+    const { i18n } = useTranslation();
 
-  const toggle = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
+    const toggle = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
-  return (
-    <>
-      <div>
-        <button onClick={toggle}>Switch language</button>
-      </div>
-    </>
-  );
+    return (
+        <div>
+            <button onClick={toggle}>Switch language</button>
+        </div>
+    );
 };
 
 const App: FC = (): JSX.Element => {
-  const [theme] = useTheme();
+    const [theme] = useTheme();
 
-  return (
-    <div className={classNames('app', [theme])}>
-      <Suspense fallback="">
-        <TestComp />
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          <Router />
+    return (
+        <div className={classNames('app', [theme])}>
+            <Suspense fallback="">
+                <TestComp />
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <Router />
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  );
+    );
 };
 
 export default App;
