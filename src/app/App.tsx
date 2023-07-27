@@ -1,11 +1,11 @@
 import { FC, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import useTheme from 'shared/lib/useTheme';
 import { classNames } from 'shared/lib/classNames';
-import { Router } from './providers/Router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { Router } from './providers/Router';
 import './styles/index.scss';
-import { useTranslation } from 'react-i18next';
 
 const TestComp = () => {
     const { i18n } = useTranslation();
