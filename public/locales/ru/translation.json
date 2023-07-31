@@ -1,4 +1,6 @@
 {
   "test": " Тестовый пример",
-  "switchLanguage": "Русский"
+  "switchLanguage": "Русский",
+  "loading": "Загрузка...",
+  "toggle": "переключить"
 }

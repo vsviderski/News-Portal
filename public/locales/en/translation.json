@@ -1,4 +1,6 @@
 {
   "test": " Test example",
-  "switchLanguage": "English"
+  "switchLanguage": "English",
+  "loading": "Loading...",
+  "toggle": "Toggle"
 }
