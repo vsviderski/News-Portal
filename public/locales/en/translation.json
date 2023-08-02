@@ -2,5 +2,8 @@
   "test": " Test example",
   "switchLanguage": "English",
   "loading": "Loading...",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "pageNotFound": "Page not found",
+  "mainPage": " Main page",
+  "aboutPage": " About page"
 }

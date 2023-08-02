@@ -1,9 +1,19 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "indentation": [4],
+    "indentation": [
+      4
+    ],
     "selector-class-pattern": null,
     "no-missing-end-of-source-newline": true,
-    "no-eol-whitespace": true
+    "no-eol-whitespace": true,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested"
+        ]
+      }
+    ]
   }
 }
