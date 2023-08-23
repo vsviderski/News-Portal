@@ -5,5 +5,7 @@
   "toggle": "Toggle",
   "pageNotFound": "Page not found",
   "mainPage": " Main page",
-  "aboutPage": " About page"
+  "aboutPage": " About page",
+  "errorPage": "Something went wrong",
+  "reloadPage": "Reload page"
 }

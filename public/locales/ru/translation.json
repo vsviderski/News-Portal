@@ -5,5 +5,7 @@
   "toggle": "переключить",
   "pageNotFound": "Страница не найдена",
   "mainPage": " Главная страница",
-  "aboutPage": "О сайте"
+  "aboutPage": "О сайте",
+  "errorPage": "Что-то пошло не так",
+  "reloadPage": "Обновить страницу"
 }
