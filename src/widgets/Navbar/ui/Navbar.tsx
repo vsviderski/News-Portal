@@ -15,7 +15,7 @@ export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
     return (
         <div className={classNames(cls.navbar, [className])}>
             <div className={cls.links}>
-                <AppLink to="/" className={cls.mainLink}>{t('mainPage')}</AppLink>
+                <AppLink to='/' className={cls.mainLink}>{t('mainPage')}</AppLink>
                 <AppLink to={RoutePaths.about}>{t('aboutPage')}</AppLink>
             </div>
         </div>

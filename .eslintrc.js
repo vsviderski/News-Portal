@@ -25,6 +25,7 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'react/button-has-type': 'off',
         'linebreak-style': 0,
+        'jsx-quotes': [2, 'prefer-single'],
         'max-len': [2, { code: 120, ignoreComments: true }],
         'react/require-default-props': 'off',
         'no-undef': 'off',
