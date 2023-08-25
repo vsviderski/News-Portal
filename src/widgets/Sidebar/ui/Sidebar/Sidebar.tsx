@@ -1,10 +1,10 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import cls from './Sidebar.module.scss';
 import Button from 'shared/ui/Button/Button';
+import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
   className?: string;
