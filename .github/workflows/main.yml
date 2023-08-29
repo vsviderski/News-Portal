@@ -7,7 +7,7 @@ on:
     branches: [master]
 jobs:
   Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     strategy:
       matrix:
         node-version: [19.x]
