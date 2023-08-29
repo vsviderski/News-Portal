@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [19.x]
+        node-version: [17.x]
 
     steps:
       - name: Setup Node.js environment
