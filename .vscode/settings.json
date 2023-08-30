@@ -4,5 +4,9 @@
   "stylelint.enable": true,
   "css.validate": true,
   "scss.validate": true,
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "livePreview.defaultPreviewPath": "/.loki/report.html",
 }

@@ -10,7 +10,6 @@ i18n
         interpolation: {
             escapeValue: false, // not needed for react!!
         },
-        resources: { en: { translations: {} } },
     });
 
 export default i18n;
