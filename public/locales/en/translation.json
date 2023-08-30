@@ -1,8 +1,8 @@
 {
   "test": " Test example",
   "switchLanguage": "English",
+  "switchLanguageShort": "En",
   "loading": "Loading...",
-  "toggle": "Toggle",
   "pageNotFound": "Page not found",
   "mainPage": " Main page",
   "aboutPage": " About page",

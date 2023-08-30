@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button, { ThemeButton } from './Button';
+import Button, { ButtonSize, ButtonTheme } from './Button';
 
 const meta = {
     title: 'shared/Button',
@@ -10,22 +10,62 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-    args: {
-        children: 'Primary',
-    },
-};
-
 export const Clear: Story = {
     args: {
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
         children: 'Clear',
     },
 };
 
 export const Outline: Story = {
     args: {
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
         children: 'Outline',
+    },
+};
+
+export const BackgroundTheme: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        children: 'Background theme',
+    },
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        children: 'Background inverted',
+    },
+};
+
+export const Square: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND,
+        children: '>',
+        square: true,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        children: '>',
+        square: true,
+        size: ButtonSize.M,
+    },
+};
+
+export const SizeL: Story = {
+    args: {
+        children: '>',
+        square: true,
+        size: ButtonSize.L,
+    },
+};
+
+export const SizeXL: Story = {
+    args: {
+        children: '>',
+        square: true,
+        size: ButtonSize.XL,
     },
 };

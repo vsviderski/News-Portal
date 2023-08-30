@@ -1,8 +1,8 @@
 {
   "test": " Тестовый пример",
   "switchLanguage": "Русский",
+  "switchLanguageShort": "Ru",
   "loading": "Загрузка...",
-  "toggle": "переключить",
   "pageNotFound": "Страница не найдена",
   "mainPage": " Главная страница",
   "aboutPage": "О сайте",

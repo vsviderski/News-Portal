@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import Button from 'shared/ui/Button/Button';
+import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { AppLink } from 'shared/ui/AppLink';
+import { RoutePaths } from 'shared/routes';
+import AboutIcon from 'shared/assets/icons/home.svg';
+import MainIcon from 'shared/assets/icons/list.svg';
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
@@ -25,10 +29,29 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
                 [cls.collapsed]: isCollapsed,
             })}
         >
-            <Button data-testid='toggle-btn' onClick={onToggle}>{t('toggle')}</Button>
+            <Button
+                data-testid='toggle-icon'
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                onClick={onToggle}
+                size={ButtonSize.L}
+                square
+            >
+                {isCollapsed ? '>' : '<'}
+            </Button>
+            <div className={cls.links}>
+                <AppLink to='/' className={cls.link}>
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.linkText}>{t('mainPage')}</span>
+                </AppLink>
+                <AppLink to={RoutePaths.about} className={cls.link}>
+                    <MainIcon className={cls.icon} />
+                    <span className={cls.linkText}>{t('aboutPage')}</span>
+                </AppLink>
+            </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cls.langSwitcher} />
+                <LangSwitcher className={cls.langSwitcher} isShort={isCollapsed} />
             </div>
         </div>
     );
