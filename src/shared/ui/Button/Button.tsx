@@ -16,6 +16,7 @@ export enum ButtonSize {
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  dataTestId?: string;
   className?: string;
   theme?: ButtonTheme;
   square?: boolean;
@@ -24,6 +25,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<IButtonProps> = (props): JSX.Element => {
     const {
+        dataTestId,
         className,
         children,
         theme = ButtonTheme.CLEAR,

@@ -8,8 +8,9 @@ describe('Sidebar', () => {
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
-    test('Sidebar render', () => {
+    test('Sidebar collapse', () => {
         componentRender(<Sidebar />);
+        screen.debug();
         const toggleBtn = screen.getByTestId('toggle-icon');
         fireEvent.click(toggleBtn);
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
