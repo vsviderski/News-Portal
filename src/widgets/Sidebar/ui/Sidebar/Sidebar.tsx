@@ -40,14 +40,14 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
                 {isCollapsed ? '>' : '<'}
             </Button>
             <div className={cls.links}>
-                {/* <AppLink to='/' className={cls.link}>
+                <AppLink to='/' className={cls.link}>
                     <AboutIcon className={cls.icon} />
                     <span className={cls.linkText}>{t('mainPage')}</span>
                 </AppLink>
                 <AppLink to={RoutePaths.about} className={cls.link}>
                     <MainIcon className={cls.icon} />
                     <span className={cls.linkText}>{t('aboutPage')}</span>
-                </AppLink> */}
+                </AppLink>
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
