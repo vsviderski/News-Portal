@@ -40,6 +40,7 @@ module.exports = {
         'jsx-a11y/no-static-element-interactions': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
         'no-use-before-define': 0,
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,
