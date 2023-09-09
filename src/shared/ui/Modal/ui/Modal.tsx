@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
+import useTheme from 'shared/lib/useTheme';
 import cls from './Modal.module.scss';
 
 interface IModalProps {
@@ -19,6 +20,7 @@ const Modal: FC<IModalProps> = (props): JSX.Element => {
         className, children, isOpen, onClose,
     } = props;
 
+    const [theme] = useTheme();
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timeoutRef = useRef<NodeJS.Timeout>();
 
@@ -60,7 +62,7 @@ const Modal: FC<IModalProps> = (props): JSX.Element => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, [className], mods)}>
+            <div className={classNames(cls.Modal, [className, theme], mods)}>
                 <div className={classNames(cls.overlay)} onClick={onCloseHandler}>
                     <div className={classNames(cls.content)} onClick={onContentClick}>
                         {children}

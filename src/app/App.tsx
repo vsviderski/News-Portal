@@ -13,7 +13,7 @@ const App: FC = (): JSX.Element => {
 
     return (
         <div className={classNames('app', [theme])}>
-            <Suspense fallback=''>
+            <Suspense fallback='Loading...'>
                 <Navbar />
                 <button onClick={() => setIsOpen(true)}>Toggle modal</button>
                 <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>Modal content</Modal>
