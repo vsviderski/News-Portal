@@ -2,7 +2,7 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 
@@ -24,7 +24,7 @@ export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
 
     return (
         <div className={classNames(cls.navbar, [className])}>
-            <Button onClick={onOpenModal}>{t('sign in')}</Button>
+            <Button onClick={onOpenModal} theme={ButtonTheme.BACKGROUND}>{t('sign in')}</Button>
             <LoginModal isOpen={isOpen} onClose={onCloseModal}>Modal content</LoginModal>
         </div>
     );
