@@ -8,7 +8,7 @@ interface ILoginModalProps {
 }
 
 export const LoginModal: FC<ILoginModalProps> = ({ isOpen, onClose }): JSX.Element => (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} lazy>
         <LoginFrom />
     </Modal>
 );

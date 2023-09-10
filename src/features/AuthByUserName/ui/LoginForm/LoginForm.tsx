@@ -14,7 +14,7 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
 
     return (
         <div className={classNames(cls.LoginForm, [className])}>
-            <Input placeholder={t('user name')} />
+            <Input placeholder={t('user name')} autoFocus />
             <Input placeholder={t('password')} />
             <Button className={cls.loginBtn}>{t('sign in')}</Button>
         </div>

@@ -11,22 +11,25 @@ interface IModalProps {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_TIME = 300;
 
-const Modal: FC<IModalProps> = (props): JSX.Element => {
+const Modal: FC<IModalProps> = (props): JSX.Element | null => {
     const {
-        className, children, isOpen, onClose,
+        className, children, isOpen, onClose, lazy,
     } = props;
 
     const [theme] = useTheme();
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [isMounted, setIsMounted] = useState<boolean>(false);
     const timeoutRef = useRef<NodeJS.Timeout>();
 
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
+            setIsMounted(true);
         }
 
         return () => {
@@ -59,6 +62,10 @@ const Modal: FC<IModalProps> = (props): JSX.Element => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
