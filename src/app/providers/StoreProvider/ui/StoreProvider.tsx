@@ -1,20 +1,11 @@
 import { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import { DeepPartial } from '@reduxjs/toolkit';
-import { createReduxStore } from '../config/store';
-import { StateSchema } from '../config/StateSchema';
+import { store } from '../config/store';
 
 interface IStoreProviderProps {
     children?: ReactNode;
-    initialState?: DeepPartial<StateSchema>;
 }
 
-const StoreProvider: FC<IStoreProviderProps> = ({ children, initialState }): JSX.Element => {
-    const store = createReduxStore(initialState as StateSchema);
-
-    return (
-        <Provider store={store}>{children}</Provider>
-    );
-};
-
-export default StoreProvider;
+export const StoreProvider: FC<IStoreProviderProps> = ({ children }): JSX.Element => (
+    <Provider store={store}>{children}</Provider>
+);

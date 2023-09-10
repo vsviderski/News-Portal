@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
+import { RenderResult, render } from '@testing-library/react';
+import { StateSchema, TestStoreProvider } from 'app/providers/StoreProvider';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
-import { RenderResult, render } from '@testing-library/react';
 import i18n from 'shared/config/i18nForTests/i18nForTests';
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 
 export interface renderWithRouterOptions {
     route?: string;
@@ -15,12 +14,12 @@ export const componentRender = (Component: ReactNode, options: renderWithRouterO
     const { route = '/', initialState = {} } = options;
 
     return render(
-        <StoreProvider initialState={initialState}>
+        <TestStoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18n}>
                     {Component}
                 </I18nextProvider>
             </MemoryRouter>
-        </StoreProvider>,
+        </TestStoreProvider>,
     );
 };
