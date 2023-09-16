@@ -4,11 +4,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 
 interface ILangSwitcherProps {
-  className?: string;
-  isShort?: boolean;
+    className?: string;
+    isShort?: boolean;
 }
 
-const LangSwitcher: FC<ILangSwitcherProps> = ({ className, isShort }): JSX.Element => {
+const LangSwitcher: FC<ILangSwitcherProps> = ({
+    className,
+    isShort,
+}): JSX.Element => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {

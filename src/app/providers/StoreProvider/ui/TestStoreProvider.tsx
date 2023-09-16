@@ -9,10 +9,11 @@ interface ITestStoreProviderProps {
     initialState?: DeepPartial<StateSchema>;
 }
 
-export const TestStoreProvider: FC<ITestStoreProviderProps> = ({ children, initialState }): JSX.Element => {
+export const TestStoreProvider: FC<ITestStoreProviderProps> = ({
+    children,
+    initialState,
+}): JSX.Element => {
     const store = createReduxStore(initialState as StateSchema);
 
-    return (
-        <Provider store={store}>{children}</Provider>
-    );
+    return <Provider store={store}>{children}</Provider>;
 };

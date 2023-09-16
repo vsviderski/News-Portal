@@ -15,7 +15,8 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
     args: {
         isOpen: true,
-        children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, illum ea pariatur voluptatibus temporibus corporis alias. Incidunt at id, dolores rerum sit odio repellendus error a soluta quia molestias ratione.',
+        children:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, illum ea pariatur voluptatibus temporibus corporis alias. Incidunt at id, dolores rerum sit odio repellendus error a soluta quia molestias ratione.',
     },
     decorators: [ThemeDecorator(Theme.LIGHT)],
 };
@@ -23,7 +24,8 @@ export const Light: Story = {
 export const Dark: Story = {
     args: {
         isOpen: true,
-        children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, illum ea pariatur voluptatibus temporibus corporis alias. Incidunt at id, dolores rerum sit odio repellendus error a soluta quia molestias ratione.',
+        children:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, illum ea pariatur voluptatibus temporibus corporis alias. Incidunt at id, dolores rerum sit odio repellendus error a soluta quia molestias ratione.',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

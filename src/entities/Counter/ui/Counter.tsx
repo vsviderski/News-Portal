@@ -23,9 +23,13 @@ const Counter: FC<ICounterProps> = (): JSX.Element => {
 
     return (
         <div>
-            <h2 data-testid='counterValue'>{counterValue}</h2>
-            <Button data-testid='increment' onClick={onIncrement}>Increment</Button>
-            <Button data-testid='decrement' onClick={onDecrement}>Decrement</Button>
+            <h2 data-testid="counterValue">{counterValue}</h2>
+            <Button data-testid="increment" onClick={onIncrement}>
+                Increment
+            </Button>
+            <Button data-testid="decrement" onClick={onDecrement}>
+                Decrement
+            </Button>
         </div>
     );
 };

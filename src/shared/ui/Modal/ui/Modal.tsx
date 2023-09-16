@@ -1,6 +1,4 @@
-import {
-    FC, ReactNode, MouseEvent, useState, useRef, useEffect,
-} from 'react';
+import { FC, ReactNode, MouseEvent, useState, useRef, useEffect } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
 import useTheme from 'shared/lib/useTheme';
@@ -17,9 +15,7 @@ interface IModalProps {
 const ANIMATION_TIME = 300;
 
 const Modal: FC<IModalProps> = (props): JSX.Element | null => {
-    const {
-        className, children, isOpen, onClose, lazy,
-    } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
 
     const [theme] = useTheme();
     const [isClosing, setIsClosing] = useState<boolean>(false);
@@ -33,7 +29,7 @@ const Modal: FC<IModalProps> = (props): JSX.Element | null => {
         }
 
         return () => {
-            clearTimeout((timeoutRef.current as NodeJS.Timeout));
+            clearTimeout(timeoutRef.current as NodeJS.Timeout);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen]);
@@ -70,8 +66,14 @@ const Modal: FC<IModalProps> = (props): JSX.Element | null => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, [className, theme], mods)}>
-                <div className={classNames(cls.overlay)} onClick={onCloseHandler}>
-                    <div className={classNames(cls.content)} onClick={onContentClick}>
+                <div
+                    className={classNames(cls.overlay)}
+                    onClick={onCloseHandler}
+                >
+                    <div
+                        className={classNames(cls.content)}
+                        onClick={onContentClick}
+                    >
                         {children}
                     </div>
                 </div>

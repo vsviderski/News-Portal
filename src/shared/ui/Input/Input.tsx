@@ -1,10 +1,17 @@
 import {
-    ChangeEvent, FC, InputHTMLAttributes, useState, useEffect,
+    ChangeEvent,
+    FC,
+    InputHTMLAttributes,
+    useState,
+    useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange'
+>;
 
 interface IInputProps extends HTMLInputProps {
     className?: string;
@@ -13,9 +20,7 @@ interface IInputProps extends HTMLInputProps {
 }
 
 const Input: FC<IInputProps> = (props): JSX.Element => {
-    const {
-        className, type = 'text', onChange, value, ...otherProps
-    } = props;
+    const { className, type = 'text', onChange, value, ...otherProps } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
         onChange?.(e.target.value);

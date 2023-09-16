@@ -11,12 +11,15 @@ export const Router: FC = (): JSX.Element => {
     const { t } = useTranslation();
 
     return (
-        <div className='page-wrapper'>
+        <div className="page-wrapper">
             <Suspense fallback={<PageLoader />}>
                 <Routes>
                     <Route path={RoutePaths.main} element={<MainPage />} />
                     <Route path={RoutePaths.about} element={<AboutPage />} />
-                    <Route path={RoutePaths.not_found} element={<NotFoundPage />} />
+                    <Route
+                        path={RoutePaths.not_found}
+                        element={<NotFoundPage />}
+                    />
                 </Routes>
             </Suspense>
         </div>

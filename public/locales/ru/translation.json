@@ -1,14 +1,14 @@
 {
-  "test": " Тестовый пример",
-  "switchLanguage": "Русский",
-  "switchLanguageShort": "Ru",
-  "loading": "Загрузка...",
-  "pageNotFound": "Страница не найдена",
-  "mainPage": " Главная страница",
-  "aboutPage": "О сайте",
-  "errorPage": "Что-то пошло не так",
-  "reloadPage": "Обновить страницу",
-  "sign in": "Войти",
-  "user name": "Имя пользователя",
-  "password": "Пароль"
+    "test": " Тестовый пример",
+    "switchLanguage": "Русский",
+    "switchLanguageShort": "Ru",
+    "loading": "Загрузка...",
+    "pageNotFound": "Страница не найдена",
+    "mainPage": " Главная страница",
+    "aboutPage": "О сайте",
+    "errorPage": "Что-то пошло не так",
+    "reloadPage": "Обновить страницу",
+    "sign in": "Войти",
+    "user name": "Имя пользователя",
+    "password": "Пароль"
 }

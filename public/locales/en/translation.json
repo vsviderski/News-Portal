@@ -1,14 +1,14 @@
 {
-  "test": " Test example",
-  "switchLanguage": "English",
-  "switchLanguageShort": "En",
-  "loading": "Loading...",
-  "pageNotFound": "Page not found",
-  "mainPage": " Main page",
-  "aboutPage": " About page",
-  "errorPage": "Something went wrong",
-  "reloadPage": "Reload page",
-  "sign in": "Sign in",
-  "user name": "User name",
-  "password": "Password"
+    "test": " Test example",
+    "switchLanguage": "English",
+    "switchLanguageShort": "En",
+    "loading": "Loading...",
+    "pageNotFound": "Page not found",
+    "mainPage": " Main page",
+    "aboutPage": " About page",
+    "errorPage": "Something went wrong",
+    "reloadPage": "Reload page",
+    "sign in": "Sign in",
+    "user name": "User name",
+    "password": "Password"
 }

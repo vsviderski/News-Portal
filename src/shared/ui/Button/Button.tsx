@@ -3,24 +3,24 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl',
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  dataTestId?: string;
-  className?: string;
-  theme?: ButtonTheme;
-  square?: boolean;
-  size?: ButtonSize;
+    dataTestId?: string;
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: ButtonSize;
 }
 
 const Button: FC<IButtonProps> = (props): JSX.Element => {

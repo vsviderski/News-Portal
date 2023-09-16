@@ -11,7 +11,7 @@ import MainIcon from 'shared/assets/icons/list.svg';
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
-  className?: string;
+    className?: string;
 }
 
 const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
@@ -24,13 +24,13 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
 
     return (
         <div
-            data-testid='sidebar'
+            data-testid="sidebar"
             className={classNames(cls.Sidebar, [className], {
                 [cls.collapsed]: isCollapsed,
             })}
         >
             <Button
-                data-testid='toggle-icon'
+                data-testid="toggle-icon"
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 onClick={onToggle}
@@ -40,7 +40,7 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
                 {isCollapsed ? '>' : '<'}
             </Button>
             <div className={cls.links}>
-                <AppLink to='/' className={cls.link}>
+                <AppLink to="/" className={cls.link}>
                     <AboutIcon className={cls.icon} />
                     <span className={cls.linkText}>{t('mainPage')}</span>
                 </AppLink>
@@ -51,7 +51,10 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cls.langSwitcher} isShort={isCollapsed} />
+                <LangSwitcher
+                    className={cls.langSwitcher}
+                    isShort={isCollapsed}
+                />
             </div>
         </div>
     );

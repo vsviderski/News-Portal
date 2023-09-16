@@ -10,16 +10,17 @@ export interface renderWithRouterOptions {
     initialState?: StateSchema;
 }
 
-export const componentRender = (Component: ReactNode, options: renderWithRouterOptions = {}): RenderResult => {
+export const componentRender = (
+    Component: ReactNode,
+    options: renderWithRouterOptions = {}
+): RenderResult => {
     const { route = '/', initialState = {} } = options;
 
     return render(
         <TestStoreProvider initialState={initialState}>
             <MemoryRouter initialEntries={[route]}>
-                <I18nextProvider i18n={i18n}>
-                    {Component}
-                </I18nextProvider>
+                <I18nextProvider i18n={i18n}>{Component}</I18nextProvider>
             </MemoryRouter>
-        </TestStoreProvider>,
+        </TestStoreProvider>
     );
 };

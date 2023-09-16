@@ -8,8 +8,6 @@ interface ICounterProps {
     className?: string;
 }
 
-const User: FC<ICounterProps> = (): JSX.Element => (
-    <div />
-);
+const User: FC<ICounterProps> = (): JSX.Element => <div />;
 
 export default User;

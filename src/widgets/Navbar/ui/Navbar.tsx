@@ -7,7 +7,7 @@ import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 
 interface INavbarProps {
-  className?: string;
+    className?: string;
 }
 
 export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
@@ -24,8 +24,12 @@ export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
 
     return (
         <div className={classNames(cls.navbar, [className])}>
-            <Button onClick={onOpenModal} theme={ButtonTheme.BACKGROUND}>{t('sign in')}</Button>
-            <LoginModal isOpen={isOpen} onClose={onCloseModal}>Modal content</LoginModal>
+            <Button onClick={onOpenModal} theme={ButtonTheme.BACKGROUND}>
+                {t('sign in')}
+            </Button>
+            <LoginModal isOpen={isOpen} onClose={onCloseModal}>
+                Modal content
+            </LoginModal>
         </div>
     );
 };

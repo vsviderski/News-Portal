@@ -11,11 +11,14 @@ export const loginByUserName = createAsyncThunk(
     'login/loginByUserName',
     async (authData: IAuthData, thunkAPI) => {
         try {
-            const response = await axios.post<IUser>('http://localhost:8000/login', authData);
+            const response = await axios.post<IUser>(
+                'http://localhost:8000/login',
+                authData
+            );
             return response.data;
         } catch (error) {
             console.log(error);
             return thunkAPI.rejectWithValue('error');
         }
-    },
+    }
 );

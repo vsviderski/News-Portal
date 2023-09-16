@@ -12,20 +12,26 @@ describe('classNames', () => {
 
     test('with mods', () => {
         const expected = 'first second third active';
-        expect(classNames('first', ['second', 'third'], {
-            active: true,
-        })).toBe(expected);
+        expect(
+            classNames('first', ['second', 'third'], {
+                active: true,
+            })
+        ).toBe(expected);
     });
 
     test('with mods false', () => {
         const expected = 'first second third';
-        expect(classNames('first', ['second', 'third'], { active: false })).toBe(expected);
+        expect(
+            classNames('first', ['second', 'third'], { active: false })
+        ).toBe(expected);
     });
 
     test('with mods undefined', () => {
         const expected = 'first second third';
-        expect(classNames('first', ['second', 'third'], {
-            active: undefined,
-        })).toBe(expected);
+        expect(
+            classNames('first', ['second', 'third'], {
+                active: undefined,
+            })
+        ).toBe(expected);
     });
 });
