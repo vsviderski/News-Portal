@@ -1,6 +1,6 @@
 export interface ILoginSchema {
-    userName: string;
+    username: string;
     password: string;
     isLoading: boolean;
-    error?: boolean;
+    error?: string;
 }

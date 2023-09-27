@@ -3,11 +3,11 @@ import axios from 'axios';
 import { IUser } from 'entities/User';
 
 export interface IAuthData {
-    userName: string;
+    username: string;
     password: string;
 }
 
-export const loginByUserName = createAsyncThunk(
+export const loginByUserName = createAsyncThunk<IUser, IAuthData, { rejectValue: string }>(
     'login/loginByUserName',
     async (authData: IAuthData, thunkAPI) => {
         try {

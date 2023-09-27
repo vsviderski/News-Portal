@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
-import Input from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
-import { loginActions } from 'features/AuthByUserName/model/slice/loginSlice';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button';
 import { useAppDispatch } from 'app/providers/StoreProvider';
+import { Input } from 'shared/ui/Input';
 import cls from './LoginForm.module.scss';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
+import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getCounter/getLoginState';
 
 interface ILoginFormProps {
@@ -17,7 +17,7 @@ interface ILoginFormProps {
 const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const { userName, password } = useSelector(getLoginState);
+    const { username, password, error, isLoading } = useSelector(getLoginState);
 
     const onUserNameChange = (value: string): void => {
         dispatch(loginActions.userName(value));
@@ -28,7 +28,7 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
     };
 
     const onSaveUser = (): void => {
-        dispatch(loginByUserName({ userName, password }));
+        dispatch(loginByUserName({ username, password }));
     };
 
     return (
