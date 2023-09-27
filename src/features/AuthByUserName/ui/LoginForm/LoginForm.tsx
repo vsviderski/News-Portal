@@ -39,7 +39,7 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
                 autoFocus
             />
             <Input placeholder={t('password')} onChange={onPasswordChange} />
-            <Button className={cls.loginBtn} onClick={onSaveUser}>
+            <Button className={cls.loginBtn} onClick={onSaveUser} disabled={isLoading}>
                 {t('sign in')}
             </Button>
         </div>
