@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { t } from 'i18next';
 import axios from 'axios';
 import { IUser } from 'entities/User';
 
@@ -17,8 +18,7 @@ export const loginByUserName = createAsyncThunk<IUser, IAuthData, { rejectValue:
             );
             return response.data;
         } catch (error) {
-            console.log(error);
-            return thunkAPI.rejectWithValue('error');
+            return thunkAPI.rejectWithValue(t('error text', { ns: 'authForm' }));
         }
     }
 );

@@ -3,25 +3,29 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 interface ITextProps {
-    children: ReactNode;
+    title?: string;
     className?: string;
+    text?: string;
+    theme?: TextTheme;
 }
 
-const Text: FC<ITextProps> = (props): JSX.Element | null => {
-    const { className, children } = props;
+export enum TextTheme {
+    PRIMARY = 'primary',
+    ERROR = 'error',
+}
+
+const Text: FC<ITextProps> = (props): JSX.Element => {
+    const { className, title, text, theme = TextTheme.PRIMARY } = props;
 
     return (
-            <div className={classNames(cls.Text, [className])}>
-                <div
-                    className={classNames(cls.overlay)}
-                >
-                    <div
-                        className={classNames(cls.content)}
-                    >
-                        {children}
-                    </div>
-                </div>
-            </div>
+        <div
+            className={classNames(cls.Text, [className], {
+                [cls[theme]]: true,
+            })}
+        >
+            {title && <p className={classNames(cls.title)}>{title}</p>}
+            {text && <p className={classNames(cls.text)}>{text}</p>}
+        </div>
     );
 };
 

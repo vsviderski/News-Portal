@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { useAppDispatch } from 'app/providers/StoreProvider';
 import { Input } from 'shared/ui/Input';
+import { Text, TextTheme } from 'shared/ui/Text';
 import cls from './LoginForm.module.scss';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { loginActions } from '../../model/slice/loginSlice';
@@ -15,7 +16,7 @@ interface ILoginFormProps {
 }
 
 const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('authForm');
     const dispatch = useAppDispatch();
     const { username, password, error, isLoading } = useSelector(getLoginState);
 
@@ -33,13 +34,19 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
 
     return (
         <div className={classNames(cls.LoginForm, [className])}>
+            <Text title={t('title')} />
+            {error && <Text text={error} theme={TextTheme.ERROR} />}
             <Input
                 placeholder={t('user name')}
                 onChange={onUserNameChange}
                 autoFocus
             />
             <Input placeholder={t('password')} onChange={onPasswordChange} />
-            <Button className={cls.loginBtn} onClick={onSaveUser} disabled={isLoading}>
+            <Button
+                className={cls.loginBtn}
+                onClick={onSaveUser}
+                disabled={isLoading}
+            >
                 {t('sign in')}
             </Button>
         </div>

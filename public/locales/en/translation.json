@@ -7,8 +7,5 @@
     "mainPage": " Main page",
     "aboutPage": " About page",
     "errorPage": "Something went wrong",
-    "reloadPage": "Reload page",
-    "sign in": "Sign in",
-    "user name": "User name",
-    "password": "Password"
+    "reloadPage": "Reload page"
 }
