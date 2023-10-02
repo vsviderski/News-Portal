@@ -16,7 +16,7 @@ interface ILoginFormProps {
 }
 
 const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
-    const { t } = useTranslation('authForm');
+    const { t } = useTranslation('authorization');
     const dispatch = useAppDispatch();
     const { username, password, error, isLoading } = useSelector(getLoginState);
 

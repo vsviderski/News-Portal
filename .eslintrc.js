@@ -53,6 +53,7 @@ module.exports = {
         'no-use-before-define': 0,
         'no-param-reassign': 'off',
         'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/jsx-no-useless-fragment':[2, {allowExpressions: true}]
     },
     globals: {
         __IS_DEV__: true,
