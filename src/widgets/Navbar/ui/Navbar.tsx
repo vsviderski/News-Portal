@@ -18,7 +18,6 @@ export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
     const authData = useSelector(getUserAuthData);
     const dispatch = useAppDispatch();
-    console.log({authData});
 
     const onOpenModal = (): void => {
         setIsOpen(true);

@@ -37,11 +37,12 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
             <Text title={t('title')} />
             {error && <Text text={error} theme={TextTheme.ERROR} />}
             <Input
+                value={username}
                 placeholder={t('user name')}
                 onChange={onUserNameChange}
                 autoFocus
             />
-            <Input placeholder={t('password')} onChange={onPasswordChange} />
+            <Input value={password} placeholder={t('password')} onChange={onPasswordChange} />
             <Button
                 className={cls.loginBtn}
                 onClick={onSaveUser}

@@ -1,9 +1,9 @@
-import { FC, Suspense, useEffect, useState } from 'react';
-import useTheme from 'shared/lib/useTheme';
+import { FC, Suspense, useEffect } from 'react';
+import { userActions } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
+import useTheme from 'shared/lib/useTheme';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { userActions } from 'entities/User';
 import { Router } from './providers/Router';
 import { useAppDispatch } from './providers/StoreProvider';
 
