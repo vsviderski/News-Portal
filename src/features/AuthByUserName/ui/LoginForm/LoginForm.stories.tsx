@@ -17,7 +17,7 @@ export const Primary: Story = {
     args: {},
     decorators: [
         StoreDecorator({
-            login: { username: 'test name', password: 'test password' },
+            loginForm: { username: 'test name', password: 'test password' },
         }),
         ThemeDecorator(Theme.DARK),
     ],
@@ -27,7 +27,7 @@ export const Error: Story = {
     args: {},
     decorators: [
         StoreDecorator({
-            login: { error: 'ERROR' },
+            loginForm: { username: '', password: '', error: 'ERROR' },
         }),
     ],
 };
@@ -36,7 +36,7 @@ export const Disabled: Story = {
     args: {},
     decorators: [
         StoreDecorator({
-            login: { isLoading: true },
+            loginForm: { username: '', password: '', isLoading: true },
         }),
     ],
 };

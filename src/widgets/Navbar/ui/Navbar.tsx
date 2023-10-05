@@ -41,9 +41,9 @@ export const Navbar: FC<INavbarProps> = ({ className }): JSX.Element => {
                     >
                         {t('sign in')}
                     </Button>
-                    <LoginModal isOpen={isOpen} onClose={onCloseModal}>
+                    {isOpen && <LoginModal isOpen={isOpen} onClose={onCloseModal}>
                         Modal content
-                    </LoginModal>
+                    </LoginModal>}
                 </div>
             ) : (
                 <div className={classNames(cls.navbar, [className])}>
