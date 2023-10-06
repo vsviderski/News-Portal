@@ -7,10 +7,10 @@ import useAsyncReducerLoad, { ReducersList } from 'shared/lib/useAsyncReducerLoa
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text';
-import { getError } from '../../model/selectors/getError';
-import { getLoading } from '../../model/selectors/getLoading';
-import { getPassword } from '../../model/selectors/getPassword';
-import { getUserName } from '../../model/selectors/getUserName';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { loginActions, loginFormReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
@@ -20,18 +20,18 @@ interface ILoginFormProps {
 }
 
 const reducers: ReducersList = {
-    loginForm: loginFormReducer
+    loginForm: loginFormReducer,
 };
 
 const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
     const { t } = useTranslation('authorization');
     useAsyncReducerLoad(reducers);
     const dispatch = useAppDispatch();
-    const username = useSelector(getUserName);
-    const password = useSelector(getPassword);
-    const isLoading = useSelector(getLoading);
-    const error = useSelector(getError);
-    
+    const username = useSelector(getLoginUserName);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginLoading);
+    const error = useSelector(getLoginError);
+
     const onUserNameChange = (value: string): void => {
         dispatch(loginActions.userName(value));
     };
