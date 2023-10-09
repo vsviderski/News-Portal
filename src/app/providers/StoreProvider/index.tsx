@@ -1,4 +1,4 @@
 export { StoreProvider } from './ui/StoreProvider';
 export { createReduxStore } from './config/store';
 export { StateSchema, ReduxStoreWithManager } from './config/StateSchema';
-export { useAppDispatch, useAppSelector } from './config/store';
+export { useAppSelector } from './config/store';

@@ -1,7 +1,7 @@
 import { FC, ReactNode, MouseEvent, useState, useRef, useEffect } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal';
-import useTheme from 'shared/lib/useTheme';
+import useTheme from 'shared/lib/hooks/useTheme';
 import cls from './Modal.module.scss';
 
 interface IModalProps {

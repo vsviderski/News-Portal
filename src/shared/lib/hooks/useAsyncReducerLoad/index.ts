@@ -5,7 +5,7 @@ import {
     ReduxStoreWithManager,
     StateSchemaKey,
 } from 'app/providers/StoreProvider/config/StateSchema';
-import { useAppDispatch } from 'app/providers/StoreProvider';
+import { useAppDispatch } from '../useAppDispatch';
 
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer;

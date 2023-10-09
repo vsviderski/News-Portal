@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from 'app/providers/StoreProvider';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
-import useAsyncReducerLoad, { ReducersList } from 'shared/lib/useAsyncReducerLoad';
+import useAsyncReducerLoad, { ReducersList } from 'shared/lib/hooks/useAsyncReducerLoad';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text';
@@ -17,13 +17,14 @@ import cls from './LoginForm.module.scss';
 
 interface ILoginFormProps {
     className?: string;
+    onSuccess?: () => void;
 }
 
 const reducers: ReducersList = {
     loginForm: loginFormReducer,
 };
 
-const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
+const LoginForm: FC<ILoginFormProps> = ({ className, onSuccess }): JSX.Element => {
     const { t } = useTranslation('authorization');
     useAsyncReducerLoad(reducers);
     const dispatch = useAppDispatch();
@@ -40,8 +41,12 @@ const LoginForm: FC<ILoginFormProps> = ({ className }): JSX.Element => {
         dispatch(loginActions.password(value));
     };
 
-    const onSaveUser = (): void => {
-        dispatch(loginByUserName({ username, password }));
+    const onSaveUser = async (): Promise<void> => {
+        const result = await dispatch(loginByUserName({ username, password }));
+
+        if (result.meta.requestStatus === 'fulfilled' && onSuccess) {
+            onSuccess();
+        }
     };
 
     return (
