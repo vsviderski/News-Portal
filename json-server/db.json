@@ -25,5 +25,13 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { 
+        "name": "Vladislav",
+        "lastName": "Sviderski",
+        "age": 28,
+        "currency": "USD",
+        "city": "Minsk",
+        "country": "Belarus",
+        "avatar": "https://www.istockphoto.com/vector/profile-picture-vector-illustration-gm587805156-100912283"
+    }
 }

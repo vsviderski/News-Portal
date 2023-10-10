@@ -1,13 +1,17 @@
 import { AnyAction, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { ICounterSchema } from 'entities/Counter';
+import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUserName';
 
 export interface StateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
+
+    // async reducers
     loginForm?: ILoginSchema;
+    profile?: IProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -13,7 +13,10 @@ export type ReducersList = {
 
 type ReducersListEntry = [StateSchemaKey, Reducer];
 
-const useAsyncReducerLoad = (reducers: ReducersList, removeAfterUnmount = true): void => {
+const useAsyncReducerLoad = (
+    reducers: ReducersList,
+    removeAfterUnmount = true
+): void => {
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useAppDispatch();
 
@@ -21,18 +24,16 @@ const useAsyncReducerLoad = (reducers: ReducersList, removeAfterUnmount = true):
         const reducersEntries = Object.entries(reducers) as ReducersListEntry[];
 
         reducersEntries.forEach(([name, reducer]) => {
-                store.reducerManager.add(name, reducer);
-                dispatch({ type: `@INIT ${name} reducer` });
-            }
-        );
+            store.reducerManager.add(name, reducer);
+            dispatch({ type: `@INIT ${name} reducer` });
+        });
 
         return () => {
             if (removeAfterUnmount) {
                 reducersEntries.forEach(([name]) => {
-                        store.reducerManager.remove(name);
-                        dispatch({ type: `@REMOVE ${name} reducer` });
-                    }
-                );
+                    store.reducerManager.remove(name);
+                    dispatch({ type: `@REMOVE ${name} reducer` });
+                });
             }
         };
     }, []);
