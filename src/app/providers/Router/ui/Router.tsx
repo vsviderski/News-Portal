@@ -6,6 +6,7 @@ import { MainPage } from 'pages/MainPage';
 import { RoutePaths } from 'shared/routes';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { PageLoader } from 'shared/ui/PageLoader';
+import { ProfilePage } from 'pages/ProfilePage';
 
 export const Router: FC = (): JSX.Element => {
     const { t } = useTranslation();
@@ -16,6 +17,7 @@ export const Router: FC = (): JSX.Element => {
                 <Routes>
                     <Route path={RoutePaths.main} element={<MainPage />} />
                     <Route path={RoutePaths.about} element={<AboutPage />} />
+                    <Route path={RoutePaths.profile} element={<ProfilePage />} />
                     <Route
                         path={RoutePaths.not_found}
                         element={<NotFoundPage />}

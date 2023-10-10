@@ -1,13 +1,10 @@
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
-import { AppLink } from 'shared/ui/AppLink';
-import { RoutePaths } from 'shared/routes';
-import AboutIcon from 'shared/assets/icons/home.svg';
-import MainIcon from 'shared/assets/icons/list.svg';
+import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { sidebarItemsList } from '../../model/items';
+import SidebarItem from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
@@ -15,7 +12,6 @@ interface ISidebarProps {
 }
 
 const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
-    const { t } = useTranslation();
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
     const onToggle = (): void => {
@@ -40,14 +36,13 @@ const Sidebar: FC<ISidebarProps> = ({ className }): JSX.Element => {
                 {isCollapsed ? '>' : '<'}
             </Button>
             <div className={cls.links}>
-                <AppLink to="/" className={cls.link}>
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.linkText}>{t('mainPage')}</span>
-                </AppLink>
-                <AppLink to={RoutePaths.about} className={cls.link}>
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.linkText}>{t('aboutPage')}</span>
-                </AppLink>
+                {sidebarItemsList.map((item) => (
+                    <SidebarItem
+                        key={item.path}
+                        item={item}
+                        collapsed={isCollapsed}
+                    />
+                ))}
             </div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

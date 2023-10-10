@@ -18,10 +18,6 @@
     margin-left: 15px;
 }
 
-.linkText {
-    transition: opacity 0.2s ease-in-out;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -32,11 +28,6 @@
 
     .langSwitcher {
         margin-left: 0;
-    }
-
-    .linkText {
-        opacity: 0;
-        width: 0;
     }
 }
 
@@ -53,14 +44,4 @@
     align-items: center;
     row-gap: 20px;
     margin-top: 40px;
-}
-
-.link {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-}
-
-.icon * {
-    fill: var(--inverted-primary-color);
 }
